@@ -3,6 +3,12 @@ import { Link } from 'react-scroll';
 import FadeInOut from './FadeInOut';
 
 const Header = () => {
+  // Function to handle the resume download
+  const handleDownloadResume = () => {
+    const resumeFile = "/Muhammad_Muaz_Khan's_Resume.pdf"; // Adjust the path to your actual resume file
+    window.open(resumeFile, '_blank');
+  };
+
   return (
     <header>
       <nav>
@@ -26,14 +32,17 @@ const Header = () => {
       </nav>
       <div className="hero">
         <FadeInOut>
-            <h1>Muhammad Muaz Khan</h1>
+          <h1>Muhammad Muaz Khan</h1>
         </FadeInOut>
         <FadeInOut>
-            <h2>Software Developer</h2>
+          <h2>Software Developer</h2>
         </FadeInOut>
+        <button className="download-button" onClick={handleDownloadResume}>
+          Download Resume
+        </button>
       </div>
     </header>
   );
-}
+};
 
 export default Header;
